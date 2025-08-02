@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepalese Orange Football Club - NOFC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+   <link rel="icon" type="image/png" href="Image/favicon-16x16.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="Image/android-chrome-192x192.png" alt="NOFC sports logo">
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#committee" class="nav-link">Committee</a>
+                <a href="#news" class="nav-link">News</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Nepalese Orange Football Club</h1>
+                <p class="hero-subtitle">Established 2021 | Orange, NSW</p>
+                <p class="hero-description">Bringing the spirit of Nepal to Australian football. Unity, Passion, Excellence.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('about')">Learn More</button>
+                    <a href="https://docs.google.com/forms/d/1ZwQxaLOVrpID5AcqEPIVS9LPbbYbPstiTLZ0f9ZScpI/edit" 
+                       class="btn btn-secondary" 
+                       target="_blank" 
+                       rel="noopener noreferrer">Join Us</a>
+                </div>
+            </div>
+            <div class="hero-logo">
+                <div class="logo-container">
+                    <div class="floating-ball">⚽</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About NOFC</h2>
+                <p>Our story, mission, and values</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <h3>Our Heritage</h3>
+                    <p>Founded in 2021, NOFC represents the Nepalese community in Orange, NSW, bringing traditional values to modern football.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community First</h3>
+                    <p>We believe in building strong community bonds through the beautiful game, fostering friendship and cultural exchange.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>Striving for excellence on and off the field, developing players and contributing to local football culture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Committee Section -->
+    <section id="committee" class="committee">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Committee</h2>
+                <p>Meet the dedicated team leading NOFC</p>
+            </div>
+            <div class="committee-grid">
+                <div class="committee-member president">
+                    <div class="member-photo">
+                        <img src="/Committe image/Subham.jpg" alt="Subham Gurung">
+                    </div>
+                    <h3>President</h3>
+                    <p class="member-name">Subham Gurung </p>
+                    <p class="member-description">Leading the club with vision and dedication to our community values.</p>
+                    <div class="member-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>subham@outlook.com</span>
+                    </div>
+                </div>
+                
+                <div class="committee-member vice-president">
+                    <div class="member-photo">
+                        <img src="/Committe image/Subash.jpg" alt="Subash Thapa">
+                    </div>
+                    <h3>Vice President</h3>
+                    <p class="member-name">Subash Thapa</p>
+                    <p class="member-description">Supporting club operations and community engagement initiatives.</p>
+                    <div class="member-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Subash@outlook.com</span>
+                    </div>
+                </div>
+                
+                
+                <div class="committee-member treasurer">
+                    <div class="member-photo">
+                        <img src="Committe image/Saugat.jpg" alt="Saugat Rana Magar">
+                    </div>
+                    <h3>Treasurer</h3>
+                    <p class="member-name">Saugat Rana Magar</p>
+                    <p class="member-description">Managing Finance and club operations</p>
+                    <div class="member-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Youraj@outlook.com</span>
+                    </div>
+                </div>
+
+                <div class="committee-member team-member">
+                    <div class="member-photo">
+                        <img src="Committe image/Youvraj.jpg" alt="Youvraj Raut">
+                    </div>
+                    <h3>Secretary</h3>
+                    <p class="member-name">Youvraj raut</p>
+                    <p class="member-description">Managing club meetings and events</p>
+                    <div class="member-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Youvraj@outlook.com</span>
+                    </div>
+                </div>
+                <div class="committee-member team-member">
+                    <div class="member-photo">
+                       <img src="Committe image/Bishesh.jpg" alt="Bishesh GC">
+                    </div>
+                    <h3>coach</h3>
+                    <p class="member-name">Bishesh GC</p>
+                    <p class="member-description">Making sure we won the everymatch we play</p>
+                    <div class="member-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Bishesh@outlook.com</span>
+                    </div>
+                </div>
+
+                
+                
+                <div class="committee-member team-member">
+                    <div class="member-photo">
+                        <img src="Committe image/Binod.jpg" alt="Committee member in white and orange team jersey posing in front of dark background">
+                        
+                    </div>
+                    <h3>Committee Member</h3>
+                    <p class="member-name">Binod Shrestha</p>
+                    <p class="member-description">Managing events and community outreach programs.</p>
+                    <div class="member-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Binod@outlook.com</span>
+                    </div>
+                </div>
+                
+                <div class="committee-member team-member">
+                    <div class="member-photo">
+                        <img src="Committe image/Suresh.jpg" alt="Committee member Suresh GC smiling professionally in club attire">
+                    </div>
+                    <h3>Committee Member</h3>
+                    <p class="member-name">Suresh GC</p>
+                    <p class="member-description">Handling relations and club communications.</p>
+                    <div class="member-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Suresh@outlook.com</span>
+                    </div>
+                </div>
+                
+                <div class="committee-member team-member">
+                    <div class="member-photo">
+                        <img src="Committe image/Mohan.jpg" alt="Committee member Mohan Thapa posing professionally in formal attire">
+                    </div>
+                    <h3>Committee Member</h3>
+                    <p class="member-name">Mohan Thapa</p>
+                    <p class="member-description">Fostering partnerships and sponsor relationships.</p>
+                    <div class="member-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Mohan@outlook.com</span>
+                    </div>
+                </div>
+                <div class="committee-member team-member">
+                    <div class="member-photo">
+                        <img src="Committe image/Laxmi.jpg" alt="Committee member Laxmi Joshi">
+                    </div>
+                    <h3>Committee Member</h3>
+                    <p class="member-name">Laxmi Joshi</p>
+                    <p class="member-description">Managing Tech and Doing Analyst role for the club</p>
+                    <div class="member-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>joshlax@outlook.com</span>
+                    </div>
+                </div>
+
+                <div class="committee-member team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Coomittee Member</h3>
+                    <p class="member-name">Sabin Gurung</p>
+                    <p class="member-description">Game Techinical Analyst</p>
+                    <div class="member-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Sabin@outlook.com</span>
+                    </div>
+                </div>
+
+                <div class="committee-member team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Comitte member</h3>
+                    <p class="member-name">Roban Phoju</p>
+                    <p class="member-description"> Game Technical Analyst</p>
+                    <div class="member-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Roban@outlook.com</span>
+                    </div>
+                </div>
+
+                
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest News</h2>
+                <p>Stay updated with NOFC activities</p>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-date">
+                        <span class="date-day">28 </span>
+                        <span class="date-month">Jun</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Upcoming Season Game</h3>
+                        <p>7A side MIlan Cup Dubbo NSW</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-date">
+                        <span class="date-day">15</span>
+                        <span class="date-month">Jun</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>New Player Registration</h3>
+                        <p>Registration is now open for new players. All skill levels welcome to join our growing football family.</p>
+                        <a href="https://docs.google.com/forms/d/1L6nM0m9DYa_JtXgmVsZ-JTfUf9VMUjQyF3lO1dI8z88/edit" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-date">
+                        <span class="date-day">ODFA CUP </span>
+                        <span class="date-month">March to September</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Community Cup</h3>
+                        <p>At the moment we are playing in the ODFA Cup</p>
+                        <a href="https://www.orangefootball.org.au/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matches Section -->
+<section id="updates-contact" class="updates-contact">
+    <div class="container">
+        <div class="updates-contact-grid">
+            <!-- Facebook Updates Column -->
+            <div class="updates-section">
+                <div class="section-header">
+                    <h2>Latest Updates</h2>
+                    <p>Follow our matches and events</p>
+                </div>
+                <div class="matches-container">
+                    <iframe 
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100069779285192&tabs=timeline&width=500&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+                        width="100%" 
+                        height="800" 
+                        style="border:none;overflow:hidden" 
+                        scrolling="no" 
+                        frameborder="0" 
+                        allowfullscreen="true" 
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Contact Form Column -->
+            <div class="contact-section">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                    <p>Join us or get more information</p>
+                    <link rel="stylesheet" href="https://docs.google.com/forms/u/0/create?usp=forms_home&ths=true">
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>Orange, NSW, Australia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>nepleasefcorange@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p>0413643993</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Training</h4>
+                                <p>Thursday & Sundays</p>
+                                <p>5:00 pm - 08:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <select id="interest" name="interest" required>
+                                <option value="">Select Interest</option>
+                                <option value="player">Join as Player</option>
+                                <option value="volunteer">Volunteer</option>
+                                <option value="sponsor">Sponsorship</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span>NOFC</span>
+                    </div>
+                    <p>Nepalese Orange Football Club - Building community through football since 2021.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#committee">Committee</a></li>
+                        <li><a href="#news">News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> nepleasefcorange@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Orange, NSW</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100069779285192"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/reel/DMpllXoy_Tw/?igsh=MWVmMzllcW5tOTNyMQ%3D%3D"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/nofc"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nepalese Orange Football Club. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
