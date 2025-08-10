@@ -1256,3 +1256,18 @@ section {
         height: 250px;
     }
 }
+
+/* Next Match Section (standalone) */
+.next-match-section {
+    background-color: var(--white);
+    padding: var(--space-lg) 0;
+    position: relative;
+    z-index: 1;
+}
+
+.next-match-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Keep other next-match styles from your existing CSS */

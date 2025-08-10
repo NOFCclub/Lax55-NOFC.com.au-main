@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nepalese Orange FC | Home</title>
+    <title>Nepaleseorangefc.com | Nepalese Orange Football Club</title>
     <meta name="description" content="Official website of Nepalese Orange Football Club - Orange, NSW">
-    <link rel="icon" href="assets/images/favicon.ico">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="icon" href="https://nepaleseorangefc.com/Image/favicon-16x16.png">
+    <link rel="canonical" href="https://nepaleseorangefc.com/">
     <link rel="stylesheet" href="style.css">
     <link rel="script" href="script.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,7 +20,7 @@
     <header class="header">
         <nav class="navbar" id="navbar">
             <div class="container">
-                <a href="/" class="logo">
+                <a href="https://nepaleseorangefc.com/" class="logo">
                     <img src="/Image/logo.png" alt="NOFC Logo">
                 </a>
                 <div class="nav-menu" id="nav-menu">
@@ -55,7 +57,7 @@
                 </div>
             </div>
             <div class="hero-image" data-animation="fade-in-right">
-                <img src="/Committe image/Khasicup.jpg" alt="NOFC Player">
+                <img src="https://nepaleseorangefc.com/Committe image/Khasicup.jpg" alt="NOFC Player">
                 <div class="hero-card">
                     <div class="event-tag">Upcoming Event</div>
                     <h3>Khasi Cup 2024</h3>
@@ -75,6 +77,39 @@
         </div>
         
     </section>
+
+    <!-- Next Match Section (moved here) -->
+<section id="next-match" class="next-match-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Upcoming</span>
+            <h2 class="section-title">Next Match</h2>
+            <p class="section-subtitle">Check our upcoming match details</p>
+        </div>
+        <div class="next-match-container" data-animation="fade-in-up">
+                <div class="match-teams">
+                    <div class="dribl-match-container">
+                        <iframe 
+                            src="https://odfa.dribl.com/matchcentre/?m=jmazyZWa5N"
+                            width="100%" 
+                            height="400" 
+                            frameborder="0"
+                            allowfullscreen="true"
+                            class="fixtures-iframe-mini">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <div class="venue">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Live match details from Dribl</span>
+                    </div>
+                    <a href="https://odfa.dribl.com/club/kemAbbRRNB" class="btn btn-sm btn-primary" target="_blank">View All Matches</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -134,49 +169,6 @@
                 </iframe>
             </div>
             
-            <!-- Next Match Highlight -->
-         <!-- Next Match Highlight -->
-<div class="next-match" data-animation="fade-in-up">
-    <div class="match-header">
-        <h3>Next Match</h3>
-        <span class="match-date">Match Information</span>
-    </div>
-    <div class="match-teams">
-        <div class="dribl-match-container">
-            <iframe 
-                src="https://odfa.dribl.com/matchcentre/?m=jmazyZWa5N"
-                width="100%" 
-                height="400" 
-                frameborder="0"
-                allowfullscreen="true"
-                class="fixtures-iframe-mini">
-            </iframe>
-        </div>
-    </div>
-    <div class="match-info">
-        <div class="venue">
-            <i class="fas fa-info-circle"></i>
-            <span>Live match details from Dribl</span>
-        </div>
-        <a href="https://odfa.dribl.com/club/kemAbbRRNB" class="btn btn-sm btn-primary" target="_blank">View All Matches</a>
-    </div>
-</div>
-    </section>
-
-            <div class="news-social">
-                <div class="social-feed">
-                    <h3>Follow Our Updates</h3>
-                    <iframe 
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100069779285192&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-                        width="100%" 
-                        height="500" 
-                        style="border:none;overflow:hidden" 
-                        scrolling="no" 
-                        frameborder="0" 
-                        allowfullscreen="true">
-                    </iframe>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -268,7 +260,6 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#fixtures">Fixtures</a></li>
                         <li><a href="#teams">Teams</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
