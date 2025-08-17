@@ -10,33 +10,80 @@ const filterButtons = document.querySelectorAll('.filter-btn');
 const galleryItems = document.querySelectorAll('.gallery-item');
 
 // Initialize when DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    initNavbar();
-    initMobileMenu();
-    initScrollEffects();
-    initAnimations();
-    initCounterAnimation();
-    initFormHandling();
-    initGalleryFilter();
-    
-    // Mobile Navigation Toggle
-    const hamburger = document.querySelector('#hamburger');
-    const navMenu = document.querySelector('#nav-menu');
-    
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function () {
+    // reuse existing top-level variables if present, otherwise query safely
+    const H = (typeof hamburger !== 'undefined' && hamburger) ? hamburger : document.getElementById('hamburger');
+    const NAV = (typeof navMenu !== 'undefined' && navMenu) ? navMenu : document.getElementById('nav-menu');
+    const NAVBAR = (typeof navbar !== 'undefined' && navbar) ? navbar : document.getElementById('navbar');
+    const LINKS = (typeof navLinks !== 'undefined' && navLinks.length) ? navLinks : document.querySelectorAll('.nav-link');
+    const BACK = (typeof backToTop !== 'undefined' && backToTop) ? backToTop : document.getElementById('backToTop');
+
+    // Hamburger / mobile nav behavior (robust + accessible)
+    if (H && NAV) {
+        H.setAttribute('role', 'button');
+        H.setAttribute('aria-controls', NAV.id || 'nav-menu');
+        H.setAttribute('aria-expanded', NAV.classList.contains('active') ? 'true' : 'false');
+
+        H.addEventListener('click', () => {
+            const open = NAV.classList.toggle('active');
+            H.classList.toggle('active');
+            document.body.classList.toggle('menu-open', open);
+            H.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+
+        LINKS.forEach(link => {
+            link.addEventListener('click', () => {
+                NAV.classList.remove('active');
+                H.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                H.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // close on outside click
+        document.addEventListener('click', (e) => {
+            if (!NAV.contains(e.target) && !H.contains(e.target) && NAV.classList.contains('active')) {
+                NAV.classList.remove('active');
+                H.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                H.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && NAV.classList.contains('active')) {
+                NAV.classList.remove('active');
+                H.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                H.setAttribute('aria-expanded', 'false');
+            }
         });
     }
-    
-    // Close menu when clicking nav links
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+
+    // Scroll effects + reveal-on-scroll (debounced)
+    const animatedEls = document.querySelectorAll('[data-animation]');
+    const debounce = (fn, ms = 12) => {
+        let t;
+        return function () {
+            clearTimeout(t);
+            t = setTimeout(() => fn.apply(this, arguments), ms);
+        };
+    };
+
+    const onScroll = () => {
+        const y = window.scrollY || window.pageYOffset;
+        if (NAVBAR) NAVBAR.classList.toggle('scrolled', y > 50);
+        if (BACK) BACK.classList.toggle('visible', y > 400);
+
+        animatedEls.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.85) el.classList.add('animated');
         });
-    });
+    };
+
+    window.addEventListener('scroll', debounce(onScroll, 20));
+    onScroll(); // initial
 });
 
 // Navbar functionality
@@ -403,3 +450,5 @@ function initGalleryFilter() {
         });
     }
 }
+
+// End of JavaScript code
