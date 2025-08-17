@@ -176,8 +176,8 @@ section {
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: var(--text-color);
-    transition: var(--transition-normal);
+    transition: all 0.3s ease-in-out;
+    background-color: var(--dark);
 }
 
 /* Buttons */
@@ -1125,15 +1125,14 @@ section {
     
     .hamburger {
         display: block;
-        z-index: 101;
-    }
-    
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
     }
     
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
     }
     
     .hamburger.active .bar:nth-child(3) {
@@ -1142,22 +1141,30 @@ section {
     
     .nav-menu {
         position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background: var(--white);
+        left: -100%;
+        top: var(--header-height);
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        transition: var(--transition-normal);
-        box-shadow: var(--shadow-lg);
-        z-index: 100;
+        background-color: var(--white);
+        width: 100%;
+        box-shadow: var(--shadow-md);
+        transition: 0.3s;
+        padding: 2rem 0;
+        z-index: 999;
     }
     
     .nav-menu.active {
-        right: 0;
+        left: 0;
+    }
+    
+    /* Make the Join Us button full width on mobile */
+    .nav-menu .btn {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    /* Fix navigation overlay */
+    body.menu-open {
+        overflow: hidden;
     }
     
     .hero-container {
@@ -1251,7 +1258,7 @@ section {
     overflow: hidden;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .fixtures-iframe-mini {
         height: 250px;
     }
@@ -1270,4 +1277,107 @@ section {
     margin: 0 auto;
 }
 
-/* Keep other next-match styles from your existing CSS */
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: var(--header-height);
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        box-shadow: var(--shadow-md);
+        transition: 0.3s;
+        padding: 2rem 0;
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+}
+
+/* Mobile Layout Adjustments */
+@media (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .hero-container,
+    .about-content,
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .hero-image {
+        order: -1;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 576px) {
+    section {
+        padding: 60px 0;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+    }
+    
+    .hero-stats {
+        padding: 1.5rem 0;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .team-grid,
+    .gallery-grid,
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .match-teams {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .match-vs {
+        margin: 1rem 0;
+    }
+}
