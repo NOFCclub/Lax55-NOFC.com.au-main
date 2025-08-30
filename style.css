@@ -16,12 +16,21 @@
     
     /* Typography */
     --font-primary: 'Poppins', sans-serif;
+<<<<<<< HEAD
+=======
+    --font-size-title: clamp(2rem, 5vw, 3.5rem); /* Fluid typography */
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     
     /* Shadows */
     --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 6px 15px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+<<<<<<< HEAD
     
+=======
+    --shadow-hover: 0 8px 16px rgba(0,0,0,0.2);
+
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
@@ -133,10 +142,63 @@ section {
     transition: var(--transition-normal);
 }
 
+<<<<<<< HEAD
+=======
+.logo-text {
+    display: none;
+    margin-left: 12px;
+    font-weight: 700;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1110; /* ensure hamburger sits above overlay/menu */
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1100; /* sits under menu but above page content */
+}
+
+.nav-overlay.active {
+    display: block;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 .nav-menu {
     display: flex;
     align-items: center;
     gap: 2rem;
+<<<<<<< HEAD
+=======
+    z-index: 1101; /* ensure menu appears above header and overlay when opened */
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 }
 
 .nav-link {
@@ -177,7 +239,11 @@ section {
     height: 3px;
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
+<<<<<<< HEAD
     background-color: var(--dark);
+=======
+    background-color: #333; /* fallback color for hamburger bars */
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 }
 
 /* Buttons */
@@ -271,12 +337,24 @@ section {
 }
 
 .hero-title {
+<<<<<<< HEAD
     font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1.5rem;
 }
 
+=======
+    font-size: var(--font-size-title);
+    transition: transform 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title:hover {
+    transform: translateY(-5px);
+}
+
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 .hero-title span {
     color: var(--accent-color);
     display: block;
@@ -294,6 +372,7 @@ section {
 }
 
 .hero-image {
+<<<<<<< HEAD
     position: relative;
     display: flex;
     justify-content: center;
@@ -303,6 +382,54 @@ section {
 .hero-image img {
     max-height: 500px;
     object-fit: contain;
+=======
+    /* keep animation but place content in normal flow so button sits under the image */
+    position: relative;
+    display: flex;
+    flex-direction: column; /* ensure image first, button below */
+    align-items: center;
+    animation: fadeInRight 1s ease;
+}
+
+/* place "Register for Khasi Cup" button below the image (not overlapping) */
+.hero-image .hero-cta-button {
+    position: static;
+    margin-top: 16px;
+    z-index: 5;
+    pointer-events: auto;
+    width: auto; /* default width on desktop */
+}
+
+.hero-image .hero-cta-button .btn {
+    background: var(--accent-color);
+    color: #000;
+    padding: 10px 18px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    border: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* responsive: on small screens make the button full-width under the image */
+@media (max-width: 768px) {
+    .hero-image {
+        width: 100%;
+    }
+    .hero-image .hero-cta-button {
+        margin-top: 12px;
+        width: calc(100% - 32px); /* keep some horizontal padding */
+    }
+    .hero-image .hero-cta-button .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 16px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 }
 
 .hero-card {
@@ -1142,7 +1269,11 @@ section {
 
 .event-media img {
     width: 100%;
+<<<<<<< HEAD
     height: 220px;
+=======
+    height: 280px;
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     object-fit: cover;
     display: block;
     border-radius: 6px 6px 0 0;
@@ -1163,6 +1294,7 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+<<<<<<< HEAD
     font-weight: 700;
 }
 
@@ -1171,11 +1303,69 @@ section {
     .event-media img {
         height: 200px;
     }
+=======
+}
+
+/* Updated Match Grid for two events */
+.khasi-events-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* Junior Khasi Cup specific styling */
+.junior-card {
+    border-left: 6px solid var(--accent-color);
+}
+
+.junior-register-btn {
+    background: var(--accent-color);
+    color: #000;
+    font-weight: 700;
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.junior-register-btn:hover {
+    background: #e88e03;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(245, 158, 11, 0.2);
+}
+
+.free-badge {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #000;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 50px;
+    margin-top: 8px;
+    font-size: 0.875rem;
+}
+
+/* Make responsive for mobile */
+@media (max-width: 768px) {
+    .khasi-events-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .junior-register-btn, 
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     .register-btn {
         max-width: 100%;
     }
 }
 
+<<<<<<< HEAD
 @media (max-width: 576px) {
     .event-media img {
         height: 160px;
@@ -1235,6 +1425,83 @@ section {
 .next-match-section .section-header {
     text-align: center;
     margin-bottom: 18px;
+=======
+/* Full-width image adjustments */
+
+/* Base image rule to ensure all images can expand fully */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Hero images - full width with maintain aspect ratio */
+.hero-image img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Event card images - full width and consistent height */
+.event-media img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px 6px 0 0;
+}
+
+/* Team member photos - full width with consistent height */
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gallery items - full bleed images */
+.gallery-item {
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* News images - full width with consistent height */
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Make images in card layouts fill their containers */
+.card img {
+    width: 100%;
+    display: block;
+}
+
+/* Ensure background images cover their containers */
+[style*="background-image"] {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-image img {
+        max-height: none;
+        height: auto;
+    }
+    
+    .event-media img {
+        height: 220px;
+    }
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 }
 
 /* Animations */
@@ -1297,8 +1564,45 @@ section {
 @media screen and (max-width: 768px) {
     /* Mobile Navigation - Consolidated */
     .hamburger {
+<<<<<<< HEAD
         display: block;
         cursor: pointer;
+=======
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24px;
+        cursor: pointer;
+    background: transparent !important;
+    position: relative;
+    }
+
+    /* Show logo text on mobile */
+    .logo-text {
+        display: inline-block;
+        color: var(--text-color);
+        font-size: 1rem;
+    }
+
+    /* make space between logo and hamburger */
+    .navbar .container {
+        gap: 12px;
+    }
+
+    /* Mobile CTA in navbar (right side) */
+    .mobile-cta {
+        display: inline-block;
+        position: absolute;
+        right: 16px;
+        top: calc(var(--header-height) / 2 - 18px);
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        z-index: 1115;
+    }
+    /* hide on desktop */
+    @media screen and (min-width: 769px) {
+        .mobile-cta { display: none; }
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     }
     
     .hamburger.active .bar:nth-child(2) {
@@ -1319,18 +1623,43 @@ section {
         left: -100%;
         top: var(--header-height);
         flex-direction: column;
+<<<<<<< HEAD
         background-color: var(--white);
         width: 100%;
         box-shadow: var(--shadow-md);
         transition: 0.3s;
         padding: 2rem 0;
         z-index: 999;
+=======
+        align-items: flex-start;
+        background-color: var(--white);
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        box-shadow: var(--shadow-md);
+    transition: left 0.3s ease-in-out;
+    padding: 2rem;
+    z-index: 1102; /* ensure menu sits above overlay */
+        overflow-y: auto;
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     }
     
     .nav-menu.active {
         left: 0;
     }
     
+<<<<<<< HEAD
+=======
+    .nav-menu .nav-link {
+        width: 100%;
+        margin: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    /* Debug helpers: force visible hamburger and menu in desktop while debugging */
+    body.debug-force-mobile .hamburger { display: flex !important; }
+    body.debug-force-mobile .nav-menu { left: 0 !important; z-index: 1200 !important; }
+    
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     /* Header Positioning */
     .header {
         position: fixed;
@@ -1669,4 +1998,119 @@ section {
     .contact-center-inner iframe {
         height: 520px;
     }
+<<<<<<< HEAD
+=======
+}
+
+/* Updated Event Cards - image fully visible, details placed below image */
+.event-card {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    min-height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    background: #fff;
+}
+
+.event-media {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.event-media img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* show full image without cropping */
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Remove overlay so image is fully visible. If needed, re-enable a subtle gradient below text only. */
+.event-media::after {
+    display: none;
+    content: none;
+}
+
+/* Place header (title/date) as a normal block below the image */
+.card-head {
+    position: static;
+    width: 100%;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    z-index: auto;
+}
+
+.card-title {
+    color: var(--dark);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.match-date {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.event-body {
+    position: static;
+    padding: 12px 18px 18px;
+    color: var(--dark);
+}
+
+.event-body p {
+    font-size: 0.95rem;
+    margin: 0 0 8px 0;
+    color: var(--dark);
+}
+
+.event-body .free-badge {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #000;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.875rem;
+}
+
+.event-media-actions {
+    position: static;
+    padding: 0 18px 18px;
+    text-align: left;
+}
+
+.register-btn, .junior-register-btn {
+    width: auto;
+    padding: 10px 18px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .event-card {
+        min-height: auto;
+    }
+
+    .card-title {
+        font-size: 1.15rem;
+    }
+
+    .event-media img {
+        max-height: 360px;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 576px) {
+    .event-card {
+        min-height: auto;
+    }
+>>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 }
