@@ -16,21 +16,14 @@
     
     /* Typography */
     --font-primary: 'Poppins', sans-serif;
-<<<<<<< HEAD
-=======
     --font-size-title: clamp(2rem, 5vw, 3.5rem); /* Fluid typography */
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     
     /* Shadows */
     --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 6px 15px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-<<<<<<< HEAD
-    
-=======
     --shadow-hover: 0 8px 16px rgba(0,0,0,0.2);
 
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
@@ -142,8 +135,6 @@ section {
     transition: var(--transition-normal);
 }
 
-<<<<<<< HEAD
-=======
 .logo-text {
     display: none;
     margin-left: 12px;
@@ -190,15 +181,11 @@ body.menu-open {
     overflow: hidden;
 }
 
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 .nav-menu {
     display: flex;
     align-items: center;
     gap: 2rem;
-<<<<<<< HEAD
-=======
     z-index: 1101; /* ensure menu appears above header and overlay when opened */
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 }
 
 .nav-link {
@@ -239,11 +226,7 @@ body.menu-open {
     height: 3px;
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
-<<<<<<< HEAD
-    background-color: var(--dark);
-=======
     background-color: #333; /* fallback color for hamburger bars */
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 }
 
 /* Buttons */
@@ -337,14 +320,6 @@ body.menu-open {
 }
 
 .hero-title {
-<<<<<<< HEAD
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-}
-
-=======
     font-size: var(--font-size-title);
     transition: transform 0.3s ease;
     margin-bottom: 1.5rem;
@@ -354,7 +329,6 @@ body.menu-open {
     transform: translateY(-5px);
 }
 
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 .hero-title span {
     color: var(--accent-color);
     display: block;
@@ -372,17 +346,6 @@ body.menu-open {
 }
 
 .hero-image {
-<<<<<<< HEAD
-    position: relative;
-    display: flex;
-    justify-content: center;
-    animation: fadeInRight 1s ease;
-}
-
-.hero-image img {
-    max-height: 500px;
-    object-fit: contain;
-=======
     /* keep animation but place content in normal flow so button sits under the image */
     position: relative;
     display: flex;
@@ -429,7 +392,6 @@ body.menu-open {
         font-size: 1rem;
         border-radius: 8px;
     }
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 }
 
 .hero-card {
@@ -1269,11 +1231,7 @@ body.menu-open {
 
 .event-media img {
     width: 100%;
-<<<<<<< HEAD
-    height: 220px;
-=======
     height: 280px;
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     object-fit: cover;
     display: block;
     border-radius: 6px 6px 0 0;
@@ -1294,16 +1252,6 @@ body.menu-open {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-<<<<<<< HEAD
-    font-weight: 700;
-}
-
-/* Keep layout responsive */
-@media (max-width: 992px) {
-    .event-media img {
-        height: 200px;
-    }
-=======
 }
 
 /* Updated Match Grid for two events */
@@ -1359,73 +1307,11 @@ body.menu-open {
     }
     
     .junior-register-btn, 
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     .register-btn {
         max-width: 100%;
     }
 }
 
-<<<<<<< HEAD
-@media (max-width: 576px) {
-    .event-media img {
-        height: 160px;
-    }
-    .event-media-actions {
-        padding: 10px 14px 0;
-    }
-    .register-btn {
-        padding: 12px 16px;
-    }
-}
-
-/* Responsive: stack on small screens */
-@media (max-width: 992px) {
-    .match-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .fixtures-iframe {
-        height: 360px;
-    }
-
-    .event-media img {
-        height: 200px;
-    }
-}
-
-/* Mobile tweaks */
-@media (max-width: 576px) {
-    .next-match-section {
-        padding: 28px 0;
-    }
-
-    .card-head {
-        padding: 14px;
-    }
-
-    .event-body {
-        padding: 14px;
-    }
-
-    .fixtures-iframe {
-        height: 300px;
-    }
-
-    .event-actions {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-/* small visual polish */
-.next-match-section .section-header {
-    text-align: center;
-    margin-bottom: 18px;
-=======
 /* Full-width image adjustments */
 
 /* Base image rule to ensure all images can expand fully */
@@ -1501,7 +1387,6 @@ img {
     .event-media img {
         height: 220px;
     }
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 }
 
 /* Animations */
@@ -1564,10 +1449,6 @@ img {
 @media screen and (max-width: 768px) {
     /* Mobile Navigation - Consolidated */
     .hamburger {
-<<<<<<< HEAD
-        display: block;
-        cursor: pointer;
-=======
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -1602,7 +1483,6 @@ img {
     /* hide on desktop */
     @media screen and (min-width: 769px) {
         .mobile-cta { display: none; }
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     }
     
     .hamburger.active .bar:nth-child(2) {
@@ -1623,14 +1503,6 @@ img {
         left: -100%;
         top: var(--header-height);
         flex-direction: column;
-<<<<<<< HEAD
-        background-color: var(--white);
-        width: 100%;
-        box-shadow: var(--shadow-md);
-        transition: 0.3s;
-        padding: 2rem 0;
-        z-index: 999;
-=======
         align-items: flex-start;
         background-color: var(--white);
         width: 100%;
@@ -1640,15 +1512,12 @@ img {
     padding: 2rem;
     z-index: 1102; /* ensure menu sits above overlay */
         overflow-y: auto;
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     }
     
     .nav-menu.active {
         left: 0;
     }
     
-<<<<<<< HEAD
-=======
     .nav-menu .nav-link {
         width: 100%;
         margin: 10px 0;
@@ -1659,7 +1528,6 @@ img {
     body.debug-force-mobile .hamburger { display: flex !important; }
     body.debug-force-mobile .nav-menu { left: 0 !important; z-index: 1200 !important; }
     
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
     /* Header Positioning */
     .header {
         position: fixed;
@@ -1998,8 +1866,6 @@ img {
     .contact-center-inner iframe {
         height: 520px;
     }
-<<<<<<< HEAD
-=======
 }
 
 /* Updated Event Cards - image fully visible, details placed below image */
@@ -2112,5 +1978,4 @@ img {
     .event-card {
         min-height: auto;
     }
->>>>>>> fb57c72 (Fix mobile navigation and improve event card layout)
 }
