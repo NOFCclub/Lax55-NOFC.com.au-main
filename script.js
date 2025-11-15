@@ -8,10 +8,7 @@
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
     const backToTop = document.getElementById('backToTop');
-    const contactForm = document.getElementById('contactForm');
     const newsletterForm = document.getElementById('newsletterForm');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
 
     // Initialize when DOM is fully loaded
     document.addEventListener('DOMContentLoaded', function () {
@@ -300,201 +297,45 @@
         }, 100);
     }
 
-    // Counter animation
-    function initCounterAnimation() {
-        const counterObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const element = entry.target;
-                        const count = parseInt(element.getAttribute('data-count'));
-                        
-                        // Only animate if not already animated
-                        if (!element.classList.contains('counted')) {
-                            animateCounter(element, count);
-                            element.classList.add('counted');
-                        }
-                    }
-                });
-            },
-            { threshold: 0.5 }
-        );
-        
-        // Observe counter elements
-        document.querySelectorAll('[data-animation="counter"]').forEach(counter => {
-            counterObserver.observe(counter);
-        });
-    }
-
-    // Animate counter
-    function animateCounter(element, target) {
-        const countElement = element.querySelector('.stat-count');
-        let count = 0;
-        const duration = 2000; // 2 seconds
-        const interval = 50; // update every 50ms
-        const increment = Math.ceil(target / (duration / interval));
-        
-        const counter = setInterval(() => {
-            count += increment;
-            
-            if (count >= target) {
-                countElement.textContent = target;
-                clearInterval(counter);
-            } else {
-                countElement.textContent = count;
-            }
-        }, interval);
-    }
-
-    // Form handling
-    function initFormHandling() {
-        // Contact form
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Simple validation
-                const name = contactForm.querySelector('#name').value;
-                const email = contactForm.querySelector('#email').value;
-                const interest = contactForm.querySelector('#interest').value;
-                const message = contactForm.querySelector('#message').value;
-                
-                if (validateForm(name, email, interest, message)) {
-                    // Show loading state
-                    const submitBtn = contactForm.querySelector('button[type="submit"]');
-                    const originalText = submitBtn.textContent;
-                    submitBtn.textContent = 'Sending...';
-                    submitBtn.disabled = true;
-                    
-                    // Simulate form submission (replace with actual API call)
-                    setTimeout(() => {
-                        showNotification('Thank you! Your message has been sent successfully.', 'success');
-                        contactForm.reset();
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    }, 1500);
-                }
-            });
-        }
-        
-        // Newsletter form
+    // Newsletter form handling
+    function initNewsletterForm() {
         if (newsletterForm) {
             newsletterForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                
-                const email = newsletterForm.querySelector('input[type="email"]').value;
-                
+                const email = this.querySelector('input[type="email"]').value;
                 if (validateEmail(email)) {
-                    const submitBtn = newsletterForm.querySelector('button[type="submit"]');
-                    const originalText = submitBtn.textContent;
-                    submitBtn.textContent = 'Subscribing...';
-                    submitBtn.disabled = true;
-                    
-                    // Simulate subscription (replace with actual API call)
-                    setTimeout(() => {
-                        showNotification('Thank you for subscribing to our newsletter!', 'success');
-                        newsletterForm.reset();
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    }, 1500);
+                    showNotification('Thank you for subscribing!', 'success');
+                    this.reset();
                 } else {
-                    showNotification('Please enter a valid email address.', 'error');
+                    showNotification('Please enter a valid email', 'error');
                 }
             });
         }
-    }
-
-    // Form validation
-    function validateForm(name, email, interest, message) {
-        let isValid = true;
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        
-        // Name validation
-        if (name.trim() === '') {
-            isValid = false;
-            showNotification('Name is required.', 'error');
-        }
-        
-        // Email validation
-        if (email.trim() === '') {
-            isValid = false;
-            showNotification('Email is required.', 'error');
-        } else if (!emailPattern.test(email)) {
-            isValid = false;
-            showNotification('Please enter a valid email address.', 'error');
-        }
-        
-        // Interest validation
-        if (interest.trim() === '') {
-            isValid = false;
-            showNotification('Interest is required.', 'error');
-        }
-        
-        // Message validation
-        if (message.trim() === '') {
-            isValid = false;
-            showNotification('Message is required.', 'error');
-        }
-        
-        return isValid;
     }
 
     // Email validation
     function validateEmail(email) {
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailPattern.test(email);
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
     }
 
     // Show notification
     function showNotification(message, type) {
         const notification = document.createElement('div');
-        notification.className = `notification ${type}`;
+        notification.className = `notification notification-${type}`;
         notification.textContent = message;
-        
         document.body.appendChild(notification);
         
-        // Remove notification after 3 seconds
-        setTimeout(() => {
-            notification.remove();
-        }, 3000);
-    }
-
-    // Gallery filter
-    function initGalleryFilter() {
-        if (filterButtons.length && galleryItems.length) {
-            // Filter items on button click
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const filterValue = this.getAttribute('data-filter');
-                    
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to the clicked button
-                    this.classList.add('active');
-                    
-                    // Filter gallery items
-                    galleryItems.forEach(item => {
-                        const itemCategory = item.getAttribute('data-category');
-                        
-                        if (filterValue === 'all' || itemCategory.includes(filterValue)) {
-                            item.classList.remove('hidden');
-                        } else {
-                            item.classList.add('hidden');
-                        }
-                    });
-                });
-            });
-        }
+        setTimeout(() => notification.remove(), 3000);
     }
 
     // Smooth scroll with delegation
     document.addEventListener('click', (e) => {
-        if (e.target.matches('.nav-link')) {
-            e.preventDefault();
+        if (e.target.matches('a[href^="#"]')) {
             const target = document.querySelector(e.target.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+                e.preventDefault();
+                smoothScrollTo(target);
             }
         }
     });
@@ -558,17 +399,11 @@
 
     // Initialize all components
     function init() {
-        try {
-            initNavbar();
-            initMobileMenu();
-            initScrollEffects();
-            initAnimations();
-            initCounterAnimation();
-            initFormHandling();
-            initGalleryFilter();
-        } catch (error) {
-            console.error('Initialization error:', error);
-        }
+        initNavbar();
+        initMobileMenu();
+        initScrollEffects();
+        initAnimations();
+        initNewsletterForm();
     }
 
     init(); // Start initialization
