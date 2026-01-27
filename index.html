@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nepalese Orange FC | Home</title>
     <meta name="description" content="Official website of Nepalese Orange Football Club - Orange, NSW">
-    <link rel="icon" href="Image/favicon-16x16.png"> <!-- Fixed path -->
+    <link rel="icon" href="Image/favicon-16x16.png">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <img src="//www.mysecuressls.com/images/seals/crazy_secure_01.png" style="border: 0">
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Header -->
     <header class="header">
         <nav class="navbar" id="navbar">
             <div class="container">
@@ -22,20 +22,24 @@
                     <img src="/Image/logo.png" alt="NOFC Logo">
                     <span class="logo-text">Nepalese Orange FC</span>
                 </a>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
                 <div class="nav-menu" id="nav-menu">
                     <a href="#home" class="nav-link active">Home</a>
                     <a href="#about" class="nav-link">About</a>
-                    <a href="#fixtures" class="nav-link">Fixtures</a>
+                    <a href="#sponsors" class="nav-link">Sponsors</a>
                     <a href="Teams.html" class="nav-link">Teams</a>
-                    <a href="#gallery" class="nav-link">Gallery</a>
                     <a href="#contact" class="nav-link">Contact</a>
                     <a href="https://docs.google.com/forms/d/1jD2avZVLiqkymMFcssUaczMKp7VWl7m-t3Kpi1_usRs/edit" class="btn btn-primary">Join Us</a>
                 </div>
-               
+            </div>
         </nav>
     </header>
 
-    <main> <!-- Added semantic main -->
+    <main>
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="container hero-container">
@@ -46,17 +50,12 @@
                         <p class="hero-subtitle">Unity. Passion. Excellence.</p>
                         <div class="hero-cta">
                             <a href="#about" class="btn btn-primary">Learn More</a>
-                            <a href="#fixtures" class="btn btn-outline">Upcoming Matches</a>
+                            <a href="Teams.html" class="btn btn-outline">View Teams</a>
                         </div>
                     </div>
                 </div>
-                
             </div>
-            
         </section>
-
-        <!-- Next Match Section with Regular and Junior Khasi Cup -->
-       
 
         <!-- About Section -->
         <section id="about" class="about">
@@ -72,8 +71,8 @@
                     </div>
                     <div class="about-text" data-animation="fade-in-right">
                         <h3>Bringing Nepal's Spirit to Australian Football</h3>
-                        <p>Founded in 2021, the Nepalese Orange Football Club represents the growing Nepalese community in Orange, NSW. Our club was formed to create a sporting home for Nepalese immigrants and their families, while promoting cultural exchange through the world's most popular sport.
-                        We compete in local leagues and organize community events that bridge cultures and bring people together through football. Our vision is to develop players of all ages while maintaining strong connections to our Nepalese heritage.</p>
+                        <p>Founded in 2021, the Nepalese Orange Football Club represents the growing Nepalese community in Orange, NSW. Our club was formed to create a sporting home for Nepalese immigrants and their families, while promoting cultural exchange through the world's most popular sport.</p>
+                        <p>We compete in local leagues and organize community events that bridge cultures and bring people together through football. Our vision is to develop players of all ages while maintaining strong connections to our Nepalese heritage.</p>
                         <div class="values-grid">
                             <div class="value-item">
                                 <div class="value-icon"><i class="fas fa-users"></i></div>
@@ -115,27 +114,34 @@
                         <img src="/Sponser image/Jimms.png" alt="Jimms Sponsor">
                     </a>
                     <a href="#" class="sponsor-item" data-animation="fade-in-up">
-                        <img src="/Image/sponsor4.png" alt="Sponsor 4">
+                        <img src="/Sponser image/dhursan.jpg" alt="Dhursan Sponsor">
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Fixtures Section -->
-        
-
-        <!-- Contact section replaced by centered Facebook Page embed -->
+        <!-- Contact Section -->
         <section id="contact" class="contact">
-            <iframe
-                title="Nepalese Orange FC Facebook"
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100069779285192&tabs=timeline&width=820&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
-                width="820"
-                height="700"
-                style="border:none;overflow:hidden" 
-                scrolling="no"
-                frameborder="0"
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                loading="lazy"></iframe> <!-- Added lazy -->
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Connect With Us</span>
+                    <h2 class="section-title">Follow Our Journey</h2>
+                    <p class="section-subtitle">Stay updated with our latest news and events</p>
+                </div>
+                <div class="contact-center-inner">
+                    <iframe
+                        title="Nepalese Orange FC Facebook"
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100069779285192&tabs=timeline&width=820&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+                        width="820"
+                        height="700"
+                        style="border:none;overflow:hidden"
+                        scrolling="no"
+                        frameborder="0"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -152,7 +158,7 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#fixtures">Fixtures</a></li>
+                        <li><a href="#sponsors">Sponsors</a></li>
                         <li><a href="Teams.html">Teams</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -167,7 +173,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Nepalese Orange Football Club. All Rights Reserved.</p>
+                <p>&copy; 2025 Nepalese Orange Football Club. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -177,8 +183,10 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
+    <!-- Overlay for mobile menu -->
+    <div id="nav-overlay" class="nav-overlay"></div>
+
     <!-- JavaScript -->
     <script src="script.js"></script>
-    
 </body>
 </html>
